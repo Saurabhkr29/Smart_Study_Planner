@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Study Planner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Smart Study Planner</h1>
+
+    <form id="taskForm">
+      <input type="text" id="subject" placeholder="Enter subject/topic" required>
+      <input type="date" id="deadline" required>
+      <input type="number" id="hours" placeholder="Study hours" min="1" required>
+      <select id="priority" required>
+        <option value="" disabled selected>Select Priority</option>
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="Low">Low</option>
+      </select>
+      <button type="submit">Add Task</button>
+    </form>
+
+    <div class="controls">
+      <label>Filter by Subject:</label>
+      <input type="text" id="filterInput" placeholder="Type subject to filter">
+    </div>
+
+    <div class="progress-container">
+      <span>Progress:</span>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <span id="progressText">0%</span>
+    </div>
+
+    
+    <div class="today-tasks"> // Today's Task Section
+      <h2>Today's Tasks</h2>
+      <div class="today-hours">Total Hours Today: <span id="todayHours">0</span>h</div>
+      <ul id="todayList"></ul>
+    </div>
+
+    <ul class="task-list" id="taskList"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
